@@ -7,4 +7,3 @@ Data Structures and algorithms
 03. this program represents use of conditional operators in C++
 
 04. this program represents the use of ternary operators in nested conditions
-v
