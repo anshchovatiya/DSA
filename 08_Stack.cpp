@@ -2,16 +2,24 @@
 
 using namespace std;
 
-#define Size 5
+
 int top = -1;
 
 class arr
-{
+{ 
     private :
 
-    int Arr[Size];
-
+    int *Arr;
+    int Size;
+   
     public :
+
+
+    arr(int size)
+    {
+        this -> Size = size;
+       Arr = new int[size];
+    }
 
     void Insertend(int number)
     {
@@ -51,19 +59,36 @@ void deleteEnd()
     --top;
     }
 }
+
+void display_Size()
+{
+    cout << endl << "The size of current array is " << top+1 << endl << " ";
+}
+
+
+
+
+
 };
 
 int main()
 {
-    arr an;
+    int n;
+    cout << endl << "Enter the size of the array : " ;
+    cin >> n;
+
+    arr an(n);
 
   char Input;
+
+    
 
     do
     {
     cout << endl << "Input element press i" ;
     cout << endl << "Delete last element press d " ;
     cout << endl << "Display elements press p";
+    cout << endl << "Display size of the array s";
     cout << endl << "Exit press e" << endl << " ";
 
 
@@ -83,6 +108,10 @@ int main()
     else if(Input == 'p')
     {
         an.display();
+    }
+    else if (Input == 's')
+    {
+        an.display_Size();
     }
     else
     {
