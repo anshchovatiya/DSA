@@ -1,7 +1,5 @@
 # Data Structure and Algorithms
 
-
-
 ## Stack
 
 **_Stacks are a type of container adaptor, specifically designed to operate in a LIFO context (last-in first-out), where elements are inserted and extracted only from one end of the container._**
@@ -10,15 +8,68 @@
 
 ### Member Functions
 
-![image of all funcions in stack](https://github.com/anshchovatiya/DSA/blob/main/Images/Screenshot%202024-03-09%20115328.png)
-
-
+1. **push()**: When we insert an element in a stack then the operation is known as a push. If the stack is full then the overflow \
+   condition occurs.
+2. **pop()**: When we delete an element from the stack, the operation is known as a pop. If the stack is empty means that no element exists
+   in the stack, this state is known as an underflow state.
+3. **isEmpty()**: It determines whether the stack is empty or not.
+4. **isFull()**: It determines whether the stack is full or not.'
+5. **peek()**: It returns the element at the given position.
+6. **count()**: It returns the total number of elements available in a stack.
+7. **change()**: It changes the element at the given position.
+8. **display()**: It prints all the elements available in the stack.
 
 ## Searching
 
 ### linear
 
-**_Linear Search is defined as a sequential search algorithm that starts at one end and goes through each element of a list until the desired element is found, otherwise the search continues till the end of the data set._**
+**_Linear search is a simple search algorithm used to find the position of a target element in an array by sequentially checking each element until a match is found or the end is reached._**
 
+_The linear search algorithm is easy to implement and efficient in two scenarios :_
 
->Binary Search is a searching algorithm used in a sorted array by repeatedly dividing the search interval in half. The idea of binary search is to use the information that the array is sorted and reduce the time complexity to O(Log N). 
+1. When the list contains fewer elements
+2. When searching for a single element in an unordered array
+
+![This is an approach employed to perform Linear Search Algorithm.](paste link here)
+
+### binary
+
+**_Binary Search is a searching algorithm for finding an element's position in a sorted array._**
+**_In this approach, the element is always searched in the middle of a portion of an array._**
+
+> Binary search can be implemented only on a sorted list of items. If the elements are not sorted already, we need to sort them first.
+
+![This is an approach employed to perform a binary Search Algorithm.](paste link here)
+
+**_Binary Search Algorithm_**
+
+-Iteration Method
+
+```cpp
+ // do until the pointers low and high meet each other.
+    mid = (low + high)/2
+    if (x == arr[mid])
+        return mid
+    else if (x > arr[mid]) // x is on the right side
+        low = mid + 1
+    else                       // x is on the left side
+        high = mid - 1
+
+```
+
+- Recursive Method
+
+```cpp
+binarySearch(arr, x, low, high)
+    if low > high
+        return False
+    else
+        mid = (low + high) / 2
+        if x == arr[mid]
+            return mid
+        else if x > arr[mid]        // x is on the right side
+            return binarySearch(arr, x, mid + 1, high)
+        else                               // x is on the left side
+            return binarySearch(arr, x, low, mid - 1)
+
+```
