@@ -30,7 +30,9 @@ _The linear search algorithm is easy to implement and efficient in two scenarios
 1. When the list contains fewer elements
 2. When searching for a single element in an unordered array
 
-![This is an approach employed to perform Linear Search Algorithm.](paste link here)
+- Linear search workint method
+
+![This is an approach employed to perform Linear Search Algorithm.](https://github.com/anshchovatiya/DSA/blob/main/Images/Screenshot%2003-10-2024%2014.16.13.png)
 
 ### binary
 
@@ -39,11 +41,11 @@ _The linear search algorithm is easy to implement and efficient in two scenarios
 
 > Binary search can be implemented only on a sorted list of items. If the elements are not sorted already, we need to sort them first.
 
-![This is an approach employed to perform a binary Search Algorithm.](paste link here)
+![This is an approach employed to perform a binary Search Algorithm.](https://github.com/anshchovatiya/DSA/blob/main/Images/Screenshot%2003-10-2024%2014.43.16.png)
 
 **_Binary Search Algorithm_**
 
--Iteration Method
+- Iteration Method
 
 ```cpp
  // do until the pointers low and high meet each other.
