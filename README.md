@@ -6,6 +6,8 @@
 
 > stacks are implemented as container adaptors, which are classes that use an encapsulated object of a ? specific container class as its underlying container, providing a specific set of member functions to access its elements. Elements are pushed/popped from the "back" of the specific container, which is known as the top of the stack.
 
+![This is an approach employed to create Stack array algorithm](paste the link here)
+
 ### Member Functions
 
 1. **push()**: When we insert an element in a stack then the operation is known as a push. If the stack is full then the overflow \
@@ -18,6 +20,94 @@
 6. **count()**: It returns the total number of elements available in a stack.
 7. **change()**: It changes the element at the given position.
 8. **display()**: It prints all the elements available in the stack.
+
+- Stack Implementation
+
+```cpp
+
+using namespace std;
+
+class arr
+{
+private:
+    int *Arr;
+    int Size;
+    int top = -1;
+
+public:
+    // this function will create dynamic array
+    arr(int size)
+    {
+        this->Size = size;
+        Arr = new int[size];
+    }
+
+    // this is implementation of push() function
+    void Insertend(int number)
+    {
+        if (top > Size - 2)
+        {
+            cout << endl
+                 << "The array is Full" << endl
+                 << " ";
+        }
+        else
+        {
+            cout << endl
+                 << "The array has been created" << endl
+                 << " ";
+            Arr[++top] = number;
+        }
+    }
+
+    void display()
+    {
+        if (top < 0)
+        {
+            cout << endl
+                 << "The array is empty" << endl
+                 << " ";
+        }
+        else
+        {
+            cout << endl;
+            for (int i = 0; i <= top; i++)
+            {
+                cout << Arr[i] << " ";
+            }
+            cout << endl
+                 << " ";
+        }
+    }
+
+    // this is implementation of pop() function
+    void deleteEnd()
+    {
+        if (top < 0)
+        {
+            cout << endl
+                 << "The array is empty" << endl
+                 << " ";
+        }
+        else
+        {
+            cout << endl
+                 << "The element has been Deleted" << endl
+                 << " ";
+            --top;
+        }
+    }
+
+    // this is implementation of count() function
+    void display_Size()
+    {
+        cout << endl
+             << "The size of current array is " << top + 1 << endl
+             << " ";
+    }
+};
+
+```
 
 ## Searching
 
@@ -73,5 +163,4 @@ binarySearch(arr, x, low, high)
             return binarySearch(arr, x, mid + 1, high)
         else                               // x is on the left side
             return binarySearch(arr, x, low, mid - 1)
-
 ```
