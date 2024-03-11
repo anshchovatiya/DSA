@@ -138,29 +138,69 @@ _The linear search algorithm is easy to implement and efficient in two scenarios
 - Iteration Method
 
 ```cpp
- // do until the pointers low and high meet each other.
-    mid = (low + high)/2
-    if (x == arr[mid])
-        return mid
-    else if (x > arr[mid]) // x is on the right side
-        low = mid + 1
-    else                       // x is on the left side
-        high = mid - 1
+
+ // function to perform binary search
+void Binary_search(int arr[],int length,int target)
+{
+    int start = 0;
+    int end = length - 1;
+    int check = 0;
+    while(start<=end)
+    {
+      int middle = (start + end)/2;
+
+        if(arr[middle] == target)
+        {
+            cout << endl << "The number " << target << " is in the target at position " << middle + 1 << endl << " ";
+            check = 1;
+            break;
+        }
+        else if(arr[middle]>target)
+        {
+            end = middle-1;
+        }
+        else if(arr[middle]<target)
+        {
+            start = middle + 1;
+        }
+    }
+
+    if(check==0)
+    {
+        cout << endl << "The number " << target << " is not in the array "  << endl << " ";
+    }
+}
 
 ```
 
 - Recursive Method
 
 ```cpp
+
+
 binarySearch(arr, x, low, high)
-    if low > high
-        return False
-    else
-        mid = (low + high) / 2
-        if x == arr[mid]
-            return mid
-        else if x > arr[mid]        // x is on the right side
-            return binarySearch(arr, x, mid + 1, high)
-        else                               // x is on the left side
-            return binarySearch(arr, x, low, mid - 1)
+    {
+        if (low > high)
+        {
+         return False;
+        }
+    else{
+         mid = (low + high) / 2
+        }
+        if (x == arr[mid])
+           {
+             return mid;
+           }
+        else if( x > arr[mid] )
+         {
+            // x is on the right side
+            return binarySearch(arr, x, mid + 1, high);
+         }
+        else
+        {
+            // x is on the left side
+            return binarySearch(arr, x, low, mid - 1);
+        }
+    }
+
 ```
