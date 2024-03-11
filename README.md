@@ -6,7 +6,7 @@
 
 > stacks are implemented as container adaptors, which are classes that use an encapsulated object of a ? specific container class as its underlying container, providing a specific set of member functions to access its elements. Elements are pushed/popped from the "back" of the specific container, which is known as the top of the stack.
 
-![This is an approach employed to create Stack array algorithm](paste the link here)
+![This is an approach employed to create Stack array algorithm]([paste the link here](https://github.com/anshchovatiya/DSA/blob/main/Images/Stack.png))
 
 ### Member Functions
 
@@ -122,7 +122,7 @@ _The linear search algorithm is easy to implement and efficient in two scenarios
 
 - Linear search workint method
 
-![This is an approach employed to perform Linear Search Algorithm.](https://github.com/anshchovatiya/DSA/blob/main/Images/Screenshot%2003-10-2024%2014.16.13.png)
+![This is an approach employed to perform Linear Search Algorithm.](https://github.com/anshchovatiya/DSA/blob/main/Images/Linear_Search.png)
 
 ### binary
 
@@ -131,7 +131,7 @@ _The linear search algorithm is easy to implement and efficient in two scenarios
 
 > Binary search can be implemented only on a sorted list of items. If the elements are not sorted already, we need to sort them first.
 
-![This is an approach employed to perform a binary Search Algorithm.](https://github.com/anshchovatiya/DSA/blob/main/Images/Screenshot%2003-10-2024%2014.43.16.png)
+![This is an approach employed to perform a binary Search Algorithm.](https://github.com/anshchovatiya/DSA/blob/main/Images/Binary_Search.png)
 
 **_Binary Search Algorithm_**
 
