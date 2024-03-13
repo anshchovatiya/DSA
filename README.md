@@ -4,13 +4,13 @@
 
 **_Stacks are a type of container adaptor, specifically designed to operate in a LIFO context (last-in first-out), where elements are inserted and extracted only from one end of the container._**
 
-> stacks are implemented as container adaptors, which are classes that use an encapsulated object of a ? specific container class as its underlying container, providing a specific set of member functions to access its elements. Elements are pushed/popped from the "back" of the specific container, which is known as the top of the stack.
+> s000000000.............tacks are implemented as container adaptors, which are classes that use an encapsulated object of a ? specific container class as its underlying container, providing a specific set of member functions to access its elements. Elements are pushed/popped from the "back" of the specific container, which is known as the top of the stack.
 
 ![This is an approach employed to create Stack array algorithm](https://github.com/anshchovatiya/DSA/blob/main/Images/Stack.png)
 
 ### Member Functions
 
-1. **push()** : When we insert an element in a stack then the operation is known as a push. If the stack is full then the overflow \
+1. **push()** : When we insert an element in a stack then the operation is known as a push. If the stack is full then the overflow
    condition occurs.
 2. **pop()** : When we delete an element from the stack, the operation is known as a pop. If the stack is empty means that no element exists
    in the stack, this state is known as an underflow state.
@@ -242,3 +242,13 @@ binarySearch(arr, x, low, high)
     }
 
 ```
+
+## Sort
+
+***sorting algorithm is an algorithm that puts elements of a list into an order***
+
+### Bubble sort 
+
+***The method of sorting works by examining two elements of array and compare them, if fist element is bigger than second It will swap the elements and repeat this process untill array is sorted***
+ 
+
