@@ -15,8 +15,8 @@ public:
         this->Size = size;
         Arr = new int[size];
     }
-    
 
+    // this function will insert number in first position of the array
     void First_Insert(int number)
     {
         if (top >= Size - 1)
@@ -40,6 +40,7 @@ public:
         }
     }
 
+    // this function will delete first element of the array
     void First_delete()
     {
         if (top < 0)
@@ -55,12 +56,16 @@ public:
             {
                 Arr[i] = Arr[i + 1];
             }
+            cout << endl
+                 << "The element has been Deleted" << endl
+                 << " ";
 
             --top;
         }
     }
 
-    void Insertend(int number)
+    // this element will insert number at last position of the array
+    void InsertEnd(int number)
     {
         if (top >= Size - 1)
         {
@@ -77,6 +82,7 @@ public:
         }
     }
 
+    // this function will print the all elements in the array
     void display()
     {
         if (top < 0)
@@ -96,6 +102,8 @@ public:
                  << " ";
         }
     }
+
+    // this fuction will delete last element of the array
     void deleteEnd()
     {
         if (top < 0)
@@ -119,6 +127,14 @@ public:
              << "The size of current array is " << top + 1 << endl
              << " ";
     }
+
+    void change_element(int number, int index)
+    {
+        Arr[index] = number;
+        cout << endl
+             << "The elements number has been updated" << endl
+             << " ";
+    }
 };
 
 int main()
@@ -128,25 +144,26 @@ int main()
          << "Enter the size of the array : ";
     cin >> n;
 
-    arr an(10);
+    arr an(n);
 
-    char Input;
+    string Input;
 
-   
     do
     {
         cout << endl
-             << "Input first element press t";
+             << "Input first element press f";
         cout << endl
-             << "Delete first element press e";
+             << "Delete first element press fd";
         cout << endl
-             << "Input last element press i";
+             << "Input last element press l";
         cout << endl
-             << "Delete last element press d";
+             << "Delete last element press ld";
         cout << endl
              << "Display elements press p";
         cout << endl
-             << "Display size of the array s";
+             << "Display size of the array press s";
+        cout << endl
+             << "Change the Element press c";
         cout << endl
              << "Exit press e" << endl
              << " ";
@@ -155,27 +172,27 @@ int main()
              << "Enter your Choice : ";
         cin >> Input;
 
-        if (Input == 'i')
+        if (Input == "l")
         {
             int number;
             cout << endl
                  << "Enter the number : ";
             cin >> number;
-            an.Insertend(number);
+            an.InsertEnd(number);
         }
-        else if (Input == 'd')
+        else if (Input == "ld")
         {
             an.deleteEnd();
         }
-        else if (Input == 'p')
+        else if (Input == "p")
         {
             an.display();
         }
-        else if (Input == 's')
+        else if (Input == "s")
         {
             an.display_Size();
         }
-        else if (Input == 't')
+        else if (Input == "f")
         {
             int number;
             cout << endl
@@ -183,14 +200,32 @@ int main()
             cin >> number;
             an.First_Insert(number);
         }
-        else if (Input == 'e')
+        else if (Input == "fd")
         {
             an.First_delete();
+        }
+        else if (Input == "c")
+        {
+            int number, index;
+            cout << endl
+                 << "Enter Index number : ";
+            cin >> index;
+            cout << endl
+                 << "Enter the number : ";
+            cin >> number;
+            an.change_element(number, index);
+        }
+
+        else if (Input == "e")
+        {
+            return 0;
         }
 
         else
         {
-            return 0;
+            cout << endl
+                 << "Invalid Input " << endl
+                 << " ";
         }
 
     } while (1);

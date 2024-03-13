@@ -10,22 +10,16 @@
 
 ### Member Functions
 
-1. **push()**: When we insert an element in a stack then the operation is known as a push. If the stack is full then the overflow \
+1. **push()** : When we insert an element in a stack then the operation is known as a push. If the stack is full then the overflow \
    condition occurs.
-2. **pop()**: When we delete an element from the stack, the operation is known as a pop. If the stack is empty means that no element exists
+2. **pop()** : When we delete an element from the stack, the operation is known as a pop. If the stack is empty means that no element exists
    in the stack, this state is known as an underflow state.
-3. **isEmpty()**: It determines whether the stack is empty or not.
-4. **isFull()**: It determines whether the stack is full or not.'
-5. **peek()**: It returns the element at the given position.
-6. **count()**: It returns the total number of elements available in a stack.
-7. **change()**: It changes the element at the given position.
-8. **display()**: It prints all the elements available in the stack.
+3. **empty()** : It determines whether the stack is empty or not.
+4. **top()** : It will return top element of the stack
 
 - Stack Implementation
 
 ```cpp
-
-using namespace std;
 
 class arr
 {
@@ -35,17 +29,61 @@ private:
     int top = -1;
 
 public:
-    // this function will create dynamic array
     arr(int size)
     {
         this->Size = size;
         Arr = new int[size];
     }
 
-    // this is implementation of push() function
-    void Insertend(int number)
+    // this function will insert number in first position of the array
+    void First_Insert(int number)
     {
-        if (top > Size - 2)
+        if (top >= Size - 1)
+        {
+            cout << endl
+                 << "The array is Full" << endl
+                 << " ";
+        }
+        else
+        {
+            // 34 48 28 8
+            for (int t = top, v = top + 1; t >= 0; t--, v--)
+            {
+                Arr[v] = Arr[t];
+            }
+            Arr[0] = number;
+            top++;
+            cout << endl
+                 << "The element has been created" << endl
+                 << " ";
+        }
+    }
+
+    // this function will delete first element of the array
+    void First_delete()
+    {
+        if (top < 0)
+        {
+            cout << endl
+                 << "The array is empty" << endl
+                 << " ";
+        }
+        else
+        {
+
+            for (int i = 0; i < top; i++)
+            {
+                Arr[i] = Arr[i + 1];
+            }
+
+            --top;
+        }
+    }
+
+    // this element will insert number at last position of the array
+    void InsertEnd(int number)
+    {
+        if (top >= Size - 1)
         {
             cout << endl
                  << "The array is Full" << endl
@@ -54,12 +92,13 @@ public:
         else
         {
             cout << endl
-                 << "The array has been created" << endl
+                 << "The element has been created" << endl
                  << " ";
             Arr[++top] = number;
         }
     }
 
+    // this function will print the all elements in the array
     void display()
     {
         if (top < 0)
@@ -80,7 +119,7 @@ public:
         }
     }
 
-    // this is implementation of pop() function
+    // this fuction will delete last element of the array
     void deleteEnd()
     {
         if (top < 0)
@@ -98,7 +137,6 @@ public:
         }
     }
 
-    // this is implementation of count() function
     void display_Size()
     {
         cout << endl
