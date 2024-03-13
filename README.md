@@ -6,7 +6,7 @@
 
 > stacks are implemented as container adaptors, which are classes that use an encapsulated object of a ? specific container class as its underlying container, providing a specific set of member functions to access its elements. Elements are pushed/popped from the "back" of the specific container, which is known as the top of the stack.
 
-![This is an approach employed to create Stack array algorithm]([paste the link here](https://github.com/anshchovatiya/DSA/blob/main/Images/Stack.png))
+![This is an approach employed to create Stack array algorithm](https://github.com/anshchovatiya/DSA/blob/main/Images/Stack.png)
 
 ### Member Functions
 
