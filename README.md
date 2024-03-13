@@ -119,7 +119,7 @@ public:
         }
     }
 
-    // this fuction will delete last element of the array
+    // this function will delete last element of the array
     void deleteEnd()
     {
         if (top < 0)
