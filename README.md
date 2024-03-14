@@ -247,8 +247,21 @@ binarySearch(arr, x, low, high)
 
 ***sorting algorithm is an algorithm that puts elements of a list into an order***
 
-### Bubble sort 
+### Bubble Sort 
 
-***The method of sorting works by examining two elements of array and compare them, if fist element is bigger than second It will swap the elements and repeat this process untill array is sorted***
+***Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order. This algorithm is not suitable for large data sets as its average and worst-case time complexity is quite high.***
+
+
+- traverse from left and compare adjacent elements and the higher one is placed at right side. 
+- In this way, the largest element is moved to the rightmost end at first. 
+- This process is then continued to find the second largest and place it and so on until the data is sorted.
  
+### Selection Sort
 
+***The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array.***
+
+- The subarray which is already sorted. 
+- Remaining subarray which is unsorted.
+
+
+***In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray.***
