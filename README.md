@@ -6,6 +6,8 @@
 
 > stacks are implemented as container adaptors, which are classes that use an encapsulated object of a ? specific container class as its underlying container, providing a specific set of member functions to access its elements. Elements are pushed/popped from the "back" of the specific container, which is known as the top of the stack.
 
+- Stack working method
+
 ![This is an approach employed to create Stack array algorithm](https://github.com/anshchovatiya/DSA/blob/main/Images/Stack.png)
 
 ### Member Functions
@@ -164,6 +166,10 @@ _The linear search algorithm is easy to implement and efficient in two scenarios
 1. When the list contains fewer elements
 2. When searching for a single element in an unordered array
 
+- Linear search working method
+
+![This is an approach employed to perform Linear Search Algorithm.](https://github.com/anshchovatiya/DSA/blob/main/Images/Linear_Search.png)
+
 <details>
 
 <summary>Implementation</summary>
@@ -208,16 +214,14 @@ _The linear search algorithm is easy to implement and efficient in two scenarios
 
 </details>
 
-- Linear search working method
-
-![This is an approach employed to perform Linear Search Algorithm.](https://github.com/anshchovatiya/DSA/blob/main/Images/Linear_Search.png)
-
 ### binary
 
 **_Binary Search is a searching algorithm for finding an element's position in a sorted array._**
 **_In this approach, the element is always searched in the middle of a portion of an array._**
 
 > Binary search can be implemented only on a sorted list of items. If the elements are not sorted already, we need to sort them first.
+
+- Binary Search working method
 
 ![This is an approach employed to perform a binary Search Algorithm.](https://github.com/anshchovatiya/DSA/blob/main/Images/Binary_Search.png)
 
@@ -272,7 +276,7 @@ void Binary_search(int arr[], int length, int target)
 
 <details>
 
-<<summary>Recursive Method</summary>
+<summary>Recursive Method</summary>
 
 ### Binary Search Recursive Method Implementation
 
@@ -321,9 +325,13 @@ binarySearch(arr, x, low, high)
 - In this way, the largest element is moved to the rightmost end at first.
 - This process is then continued to find the second largest and place it and so on until the data is sorted.
 
+- Bubble Sort working method
+
+![This is Bubble sort working method](paste the link here)
+
 <details>
 
-<<summary>Bubble sort Implementation</summary>
+<summary>Bubble sort Implementation</summary>
 
 ### Implementation
 
@@ -360,9 +368,13 @@ void sort_array(int arr[], int length)
 
 **_In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray._**
 
+- Selection Sort working method
+
+![This is selection sort working method](paste the link here)
+
 <details>
 
-<<summary>Selection Implementation</summary>
+<summary>Selection Implementation</summary>
 
 ### Implementation
 
@@ -388,3 +400,222 @@ void SelectionSort(int arr[], int length)
 ```
 
 </details>
+
+## Simple Queue
+
+**_Queue works on FIFO(first in first out) principle_**
+
+**_Queues are type of container adaptors_**
+
+    - In Queues elements are inserted in at the back and inserted from front
+
+- Simple Queue Working method
+
+![This is Simple Queue working method](paste the link here)
+
+<details>
+
+<summary>Implementation</summary>
+
+### Simple Queue Implementation
+
+```cpp
+
+class Queue
+{
+    int *arr;
+    int size;
+    int front;
+    int rear;
+
+public:
+    Queue(int S)
+    {
+        size = S;
+        front = -1;
+        rear = -1;
+        arr = new int[size];
+    }
+
+    // this function will insert element in queue
+    void Insert(int number)
+    {
+        if (front == -1 && rear == -1)
+        {
+
+            front++;
+            rear++;
+            arr[rear] = number;
+        }
+        else if (rear >= size - 1)
+        {
+            cout << endl
+                 << "Array is Full " << endl
+                 << endl;
+        }
+        else
+        {
+            rear++;
+            arr[rear] = number;
+        }
+    }
+
+    // this function will display the array
+    void Display()
+    {
+        if (front >= 0)
+        {
+            cout << endl
+                 << endl;
+            for (int i = front; i <= rear; i++)
+            {
+                cout << arr[i] << " ";
+            }
+            cout << endl
+                 << endl;
+        }
+        else
+        {
+            cout << endl
+                 << "Array is Empty" << endl
+                 << endl;
+        }
+    }
+
+    // this funcion will delete the first element off the array
+    void Delete()
+    {
+        if (front < 0)
+        {
+            cout << endl
+                 << "Array is Empty " << endl
+                 << endl;
+        }
+        else if (front == rear)
+        {
+            front = -1;
+            rear = -1;
+        }
+        else
+        {
+            front++;
+        }
+    }
+};
+
+```
+
+</details>
+
+![This is Structure of Queue](paste the link here)
+
+## Circular Queue
+
+**_A circular queue is type of queue in which last position of Queue is connected to the first position of the Queue to make circle of an array_**
+
+- Circular Queue Working method
+
+![This is Circular Queue working method](paste the link here)
+
+<details>
+
+<summary>Implementation</summary>
+
+### Circular Queue Implementation
+
+```cpp
+class Queue
+{
+    int *arr;
+    int size;
+    int front;
+    int rear;
+
+public:
+    Queue(int S)
+    {
+        size = S;
+        front = -1;
+        rear = -1;
+        arr = new int[size];
+    }
+
+    // this function will insert element in queue
+    void Insert(int number)
+    {
+        if (front == -1 && rear == -1)
+        {
+
+            front++;
+            rear++;
+            arr[rear] = number;
+        }
+        else if (((rear + 1) % size) == front)
+        {
+            cout << endl
+                 << "Array is Full " << endl
+                 << endl;
+        }
+        else
+        {
+            rear = (rear + 1) % size;
+            arr[rear] = number;
+        }
+    }
+
+    // this function will display the array
+    void Display()
+    {
+        if (front >= 0)
+        {
+            cout << endl
+                 << endl;
+
+            int i = front;
+
+            do
+            {
+                cout << arr[i] << " ";
+                i = (i + 1) % size;
+            }   while (i!=rear);
+
+            cout << arr[i] << " ";
+
+
+            cout << endl
+                 << endl;
+        }
+        else
+        {
+            cout << endl
+                 << "Array is Empty" << endl
+                 << endl;
+        }
+    }
+
+    // this funcion will delete the first element off the array
+    void Delete()
+    {
+        if (front < 0)
+        {
+            cout << endl
+                 << "Array is Empty " << endl
+                 << endl;
+        }
+        else if (front == rear)
+        {
+            front = -1;
+            rear = -1;
+        }
+        else
+        {
+            front++;
+        }
+    }
+};
+
+```
+
+</details>
+
+![This is Structure of Circular Queue](paste the link here)
