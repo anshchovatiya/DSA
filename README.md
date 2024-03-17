@@ -8,16 +8,16 @@
 
 - Stack working method
 
-![This is an approach employed to create Stack array algorithm](https://github.com/anshchovatiya/DSA/blob/main/Images/Stack.png)
+![This is an approach employed to create the Stack array algorithm](https://github.com/anshchovatiya/DSA/blob/main/Images/Stack.png)
 
 ### Member Functions
 
-1. **push()** : When we insert an element in a stack then the operation is known as a push. If the stack is full then the overflow
+1. **push()**: When we insert an element in a stack then the operation is known as a push. If the stack is full then the overflow
    condition occurs.
-2. **pop()** : When we delete an element from the stack, the operation is known as a pop. If the stack is empty means that no element exists
+2. **pop()**: When we delete an element from the stack, the operation is known as a pop. If the stack is empty means that no element exists
    in the stack, this state is known as an underflow state.
-3. **empty()** : It determines whether the stack is empty or not.
-4. **top()** : It will return top element of the stack
+3. **empty()**: It determines whether the stack is empty or not.
+4. **top()**: It will return the top element of the stack
 
 <details>
 
@@ -231,7 +231,7 @@ _The linear search algorithm is easy to implement and efficient in two scenarios
 
 <summary>Iteration Method</summary>
 
-### Binary Search Iteration method Implementation
+### Binary Search Iteration Method Implementation
 
 ```cpp
 
@@ -321,13 +321,13 @@ binarySearch(arr, x, low, high)
 
 **_Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order. This algorithm is not suitable for large data sets as its average and worst-case time complexity is quite high._**
 
-- traverse from left and compare adjacent elements and the higher one is placed at right side.
+- traverse from the left and compare adjacent elements and the higher one is placed at the right side.
 - In this way, the largest element is moved to the rightmost end at first.
 - This process is then continued to find the second largest and place it and so on until the data is sorted.
 
 - Bubble Sort working method
 
-![This is Bubble sort working method](paste the link here)
+![This is the Bubble sort working method](https://github.com/anshchovatiya/DSA/blob/main/Images/Bubble%20Sort.png)
 
 <details>
 
@@ -361,16 +361,16 @@ void sort_array(int arr[], int length)
 
 ### Selection Sort
 
-**_The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array._**
+**_The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from the unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array._**
 
 - The subarray which is already sorted.
 - Remaining subarray which is unsorted.
 
-**_In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray._**
+**_In every iteration of the selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray._**
 
 - Selection Sort working method
 
-![This is selection sort working method](paste the link here)
+![This is the selection sort working method](https://github.com/anshchovatiya/DSA/blob/main/Images/Selection_Sort.png)
 
 <details>
 
@@ -403,15 +403,26 @@ void SelectionSort(int arr[], int length)
 
 ## Simple Queue
 
-**_Queue works on FIFO(first in first out) principle_**
+**_Queue works on the FIFO(first in first out) principle_**
 
-**_Queues are type of container adaptors_**
+**_Queues are the type of container adaptors_**
 
-    - In Queues elements are inserted in at the back and inserted from front
+    - In Queues elements are inserted at the back and inserted from the front
+
+### Functions of Queue
+
+1. **empty()** : return true if the array is empty and return false if the array is not empty
+2. **size()** : return current numbers of the elements in the array
+3. **front()** : return the first element of the array
+4. **back()** : return the last element of the array
+5. **push()** : Insert a new element at the end of the array
+6. **emplace()** : add a sentence at the end of the array
+7. **pop()** : delete the front element of the array
+8. **swap()** : swap two arrays
 
 - Simple Queue Working method
 
-![This is Simple Queue working method](paste the link here)
+![This is the Simple Queue working method](https://github.com/anshchovatiya/DSA/blob/main/Images/Simple%20Queue.png)
 
 <details>
 
@@ -482,7 +493,7 @@ public:
         }
     }
 
-    // this funcion will delete the first element off the array
+    // this function will delete the first element off the array
     void Delete()
     {
         if (front < 0)
@@ -507,15 +518,15 @@ public:
 
 </details>
 
-![This is Structure of Queue](paste the link here)
+![This is the Structure of Queue](paste the link here)
 
 ## Circular Queue
 
-**_A circular queue is type of queue in which last position of Queue is connected to the first position of the Queue to make circle of an array_**
+**_A circular queue is the type of queue in which the last position of the Queue is connected to the first position of the Queue to make the circle of an array_**
 
 - Circular Queue Working method
 
-![This is Circular Queue working method](paste the link here)
+![This is the Circular Queue working method](https://github.com/anshchovatiya/DSA/blob/main/Images/Circluar_queue.png)
 
 <details>
 
@@ -593,7 +604,7 @@ public:
         }
     }
 
-    // this funcion will delete the first element off the array
+    // this function will delete the first element off the array
     void Delete()
     {
         if (front < 0)
@@ -617,5 +628,3 @@ public:
 ```
 
 </details>
-
-![This is Structure of Circular Queue](paste the link here)
