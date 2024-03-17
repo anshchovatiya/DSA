@@ -19,6 +19,8 @@
 3. **empty()**: It determines whether the stack is empty or not.
 4. **top()**: It will return the top element of the stack
 
+**_Stack Algorithm_**
+
 <details>
 
 <summary>Implementation</summary>
@@ -169,6 +171,8 @@ _The linear search algorithm is easy to implement and efficient in two scenarios
 - Linear search working method
 
 ![This is an approach employed to perform Linear Search Algorithm.](https://github.com/anshchovatiya/DSA/blob/main/Images/Linear_Search.png)
+
+**_Linear Search Algorithm_**
 
 <details>
 
@@ -329,6 +333,8 @@ binarySearch(arr, x, low, high)
 
 ![This is the Bubble sort working method](https://github.com/anshchovatiya/DSA/blob/main/Images/Bubble%20Sort.png)
 
+**_Bubble Sort Algorithm_**
+
 <details>
 
 <summary>Bubble sort Implementation</summary>
@@ -371,6 +377,8 @@ void sort_array(int arr[], int length)
 - Selection Sort working method
 
 ![This is the selection sort working method](https://github.com/anshchovatiya/DSA/blob/main/Images/Selection_Sort.png)
+
+**_Bubble Sort Algorithm_**
 
 <details>
 
@@ -423,6 +431,8 @@ void SelectionSort(int arr[], int length)
 - Simple Queue Working method
 
 ![This is the Simple Queue working method](https://github.com/anshchovatiya/DSA/blob/main/Images/Simple%20Queue.png)
+
+**_Simple Queue Algorithm_**
 
 <details>
 
@@ -527,6 +537,8 @@ public:
 - Circular Queue Working method
 
 ![This is the Circular Queue working method](https://github.com/anshchovatiya/DSA/blob/main/Images/Circluar_queue.png)
+
+**_Circular Queue Algorithm_**
 
 <details>
 
