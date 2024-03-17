@@ -1727,6 +1727,87 @@ int* leftRightDifference(int* nums, int numsSize, int* returnSize){
 }
 
 ------------------------------------------------------------------------------------------------------------
+
+88. Merge Sorted Array
+
+Example 1:
+
+Input: nums1 = [1,2,3,0,0,0], m = 3, nums2 = [2,5,6], n = 3
+Output: [1,2,2,3,5,6]
+Explanation: The arrays we are merging are [1,2,3] and [2,5,6].
+The result of the merge is [1,2,2,3,5,6] with the underlined elements coming from nums1.
+
+
+void merge(int* nums1, int nums1Size, int m, int* nums2, int nums2Size, int n) {
+
+    int i=0;
+    int v = m;
+    m = m+n;
+    while(i<n)
+    {
+        nums1[v] = nums2[i];
+        v++;
+        i++;
+    }
+
+    sort(nums1,m);
+}
+
+
+void sort(int arr[],int size)
+{
+    for(int i=0;i<size;i++)
+    {
+        for(int j=i+1;j<size;j++)
+        {
+            if(arr[i]>arr[j])
+            {
+                int temp = arr[i];
+                arr[i] = arr[j];
+                arr[j] = temp;
+            }
+        }
+    }
+}
+
+
+
 ------------------------------------------------------------------------------------------------------------
+
+2160. Minimum Sum of Four Digit Number After Splitting Digits
+
+Example 1:
+
+Input: num = 2932
+Output: 52
+Explanation: Some possible pairs [new1, new2] are [29, 23], [223, 9], etc.
+The minimum sum can be obtained by the pair [29, 23]: 29 + 23 = 52.
+
+void Sort(int arr[], int size) {
+    for (int i = 0; i < size; i++) {
+        for (int j = i + 1; j < size; j++) {
+            if (arr[i] > arr[j]) {
+              int temp = arr[i];
+              arr[i] = arr[j];
+              arr[j] = temp;
+            }
+        }
+    }
+}
+
+
+int minimumSum(int num) {
+
+    int digit[4];
+    for (int i = 0; i < 4; i++) {
+        digit[i] = num % 10;
+        num /= 10;
+    }
+    Sort(digit, 4);
+
+    return ((digit[0] + digit[1]) * 10) + (digit[2] + digit[3]) ;
+}
+
+
 ------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------
