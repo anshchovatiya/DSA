@@ -164,7 +164,51 @@ _The linear search algorithm is easy to implement and efficient in two scenarios
 1. When the list contains fewer elements
 2. When searching for a single element in an unordered array
 
-- Linear search workint method
+<details>
+
+<summary>Implementation</summary>
+
+### Linear Search Implementation
+
+```cpp
+
+   void FindElement()
+    {
+        cout << endl;
+           for(int i=0;i<Size;i++)
+      {
+        cout  << arr[i] << " ";
+       }
+    cout << endl;
+
+    int number;
+    cout  << endl << "Enter the element you want to Find : " ;
+    cin >> number;
+
+    int check = 0;
+
+     for(int i=0;i<Size;i++)
+     {
+        if(number == arr[i])
+        {
+            cout << endl << "The number is in the array and index value of the number is " << i << endl << " ";
+            check = 1;
+            break;
+        }
+     }
+
+     if(check ==0)
+     {
+        cout << endl << "The number is not in the array" << endl << " " ;
+     }
+
+    }
+
+```
+
+</details>
+
+- Linear search working method
 
 ![This is an approach employed to perform Linear Search Algorithm.](https://github.com/anshchovatiya/DSA/blob/main/Images/Linear_Search.png)
 
@@ -179,45 +223,58 @@ _The linear search algorithm is easy to implement and efficient in two scenarios
 
 **_Binary Search Algorithm_**
 
-- Iteration Method
+<details>
+
+<summary>Iteration Method</summary>
+
+### Binary Search Iteration method Implementation
 
 ```cpp
 
- // function to perform binary search
-void Binary_search(int arr[],int length,int target)
+void Binary_search(int arr[], int length, int target)
 {
     int start = 0;
     int end = length - 1;
     int check = 0;
-    while(start<=end)
+    while (start <= end)
     {
-      int middle = (start + end)/2;
+        int middle = (start + end) / 2;
 
-        if(arr[middle] == target)
+        if (arr[middle] == target)
         {
-            cout << endl << "The number " << target << " is in the target at position " << middle + 1 << endl << " ";
+            cout << endl
+                 << "The number " << target << " is in the target at position " << middle + 1 << endl
+                 << " ";
             check = 1;
             break;
         }
-        else if(arr[middle]>target)
+        else if (arr[middle] > target)
         {
-            end = middle-1;
+            end = middle - 1;
         }
-        else if(arr[middle]<target)
+        else if (arr[middle] < target)
         {
             start = middle + 1;
         }
     }
 
-    if(check==0)
+    if (check == 0)
     {
-        cout << endl << "The number " << target << " is not in the array "  << endl << " ";
+        cout << endl
+             << "The number " << target << " is not in the array " << endl
+             << " ";
     }
 }
 
 ```
 
-- Recursive Method
+</details>
+
+<details>
+
+<<summary>Recursive Method</summary>
+
+### Binary Search Recursive Method Implementation
 
 ```cpp
 
@@ -247,7 +304,10 @@ binarySearch(arr, x, low, high)
         }
     }
 
+
 ```
+
+</details>
 
 ## Sort
 
@@ -261,6 +321,36 @@ binarySearch(arr, x, low, high)
 - In this way, the largest element is moved to the rightmost end at first.
 - This process is then continued to find the second largest and place it and so on until the data is sorted.
 
+<details>
+
+<<summary>Bubble sort Implementation</summary>
+
+### Implementation
+
+```cpp
+
+
+// this function will sort the array using bubble sort method
+void sort_array(int arr[], int length)
+{
+    for (int i = 1; i <= length; i++)
+    {
+        for (int j = 0; j < length - i; j++)
+        {
+            if (arr[j] > arr[j + 1])
+            {
+                int temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
+}
+
+```
+
+</details>
+
 ### Selection Sort
 
 **_The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array._**
@@ -269,3 +359,32 @@ binarySearch(arr, x, low, high)
 - Remaining subarray which is unsorted.
 
 **_In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray._**
+
+<details>
+
+<<summary>Selection Implementation</summary>
+
+### Implementation
+
+```cpp
+
+// this function will sort the array with using selection sort method
+void SelectionSort(int arr[], int length)
+{
+    for (int i = 0; i < length; i++)
+    {
+        for (int j = i + 1; j < length; j++)
+        {
+            if (arr[i] > arr[j])
+            {
+                int swap = arr[i];
+                arr[i] = arr[j];
+                arr[j] = swap;
+            }
+        }
+    }
+}
+
+```
+
+</details>
