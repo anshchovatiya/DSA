@@ -4,7 +4,7 @@
 
 **_Stacks are a type of container adaptor, specifically designed to operate in a LIFO context (last-in first-out), where elements are inserted and extracted only from one end of the container._**
 
-> s000000000.............tacks are implemented as container adaptors, which are classes that use an encapsulated object of a ? specific container class as its underlying container, providing a specific set of member functions to access its elements. Elements are pushed/popped from the "back" of the specific container, which is known as the top of the stack.
+> stacks are implemented as container adaptors, which are classes that use an encapsulated object of a ? specific container class as its underlying container, providing a specific set of member functions to access its elements. Elements are pushed/popped from the "back" of the specific container, which is known as the top of the stack.
 
 ![This is an approach employed to create Stack array algorithm](https://github.com/anshchovatiya/DSA/blob/main/Images/Stack.png)
 
@@ -17,7 +17,11 @@
 3. **empty()** : It determines whether the stack is empty or not.
 4. **top()** : It will return top element of the stack
 
-- Stack Implementation
+<details>
+
+<summary>Implementation</summary>
+
+### Stack Implementation
 
 ```cpp
 
@@ -147,6 +151,8 @@ public:
 
 ```
 
+</details>
+
 ## Searching
 
 ### linear
@@ -245,23 +251,21 @@ binarySearch(arr, x, low, high)
 
 ## Sort
 
-***sorting algorithm is an algorithm that puts elements of a list into an order***
+**_sorting algorithm is an algorithm that puts elements of a list into an order_**
 
-### Bubble Sort 
+### Bubble Sort
 
-***Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order. This algorithm is not suitable for large data sets as its average and worst-case time complexity is quite high.***
+**_Bubble Sort is the simplest sorting algorithm that works by repeatedly swapping the adjacent elements if they are in the wrong order. This algorithm is not suitable for large data sets as its average and worst-case time complexity is quite high._**
 
-
-- traverse from left and compare adjacent elements and the higher one is placed at right side. 
-- In this way, the largest element is moved to the rightmost end at first. 
+- traverse from left and compare adjacent elements and the higher one is placed at right side.
+- In this way, the largest element is moved to the rightmost end at first.
 - This process is then continued to find the second largest and place it and so on until the data is sorted.
- 
+
 ### Selection Sort
 
-***The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array.***
+**_The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array._**
 
-- The subarray which is already sorted. 
+- The subarray which is already sorted.
 - Remaining subarray which is unsorted.
 
-
-***In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray.***
+**_In every iteration of selection sort, the minimum element (considering ascending order) from the unsorted subarray is picked and moved to the sorted subarray._**
