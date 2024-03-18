@@ -19,20 +19,21 @@ public:
     }
 
     // this function will insert element in queue
-    void Insert(int number)
+    void Insert_rear(int number)
     {
-        if (front == -1 && rear == -1)
+
+        if (((rear + 1) % size) == front)
+        {
+            cout << endl
+                 << "Array is Full " << endl
+                 << endl;
+        }
+        else if (front == -1 && rear == -1)
         {
 
             front++;
             rear++;
             arr[rear] = number;
-        }
-        else if (((rear + 1) % size) == front)
-        {
-            cout << endl
-                 << "Array is Full " << endl
-                 << endl;
         }
         else
         {
@@ -41,9 +42,21 @@ public:
         }
     }
 
+    void Delete_rear()
+    {
+        if(front == -1 && rear == -1)
+        {
+            cout << endl << "Array is Empty" << endl << endl;
+        }
+        else if(((rear + 1) % size) == front)
+    }
+
+
+
+
     // this function will display the array
     void Display()
-    { 
+    {
         if (front >= 0)
         {
             cout << endl
@@ -55,10 +68,9 @@ public:
             {
                 cout << arr[i] << " ";
                 i = (i + 1) % size;
-            }   while (i!=rear);
+            } while (i != rear);
 
             cout << arr[i] << " ";
-
 
             cout << endl
                  << endl;
@@ -72,7 +84,7 @@ public:
     }
 
     // this funcion will delete the first element off the array
-    void Delete()
+    void Delete_front()
     {
         if (front < 0)
         {
@@ -87,7 +99,7 @@ public:
         }
         else
         {
-            front++;
+            front = (front + 1) % size;
         }
     }
 };
