@@ -18,6 +18,14 @@ public:
         arr = new int[size];
     }
 
+    ~Queue()
+    {
+        delete[] arr;
+        cout << endl
+             << "Your array is Destroyed" << endl
+             << endl;
+    }
+
     // this function will insert element in queue
     void Insert(int number)
     {
@@ -91,6 +99,7 @@ int main()
          << "Enter the Size of The Array : ";
     cin >> Size;
     Queue arr1(Size);
+
     int n;
     do
     {
@@ -121,4 +130,5 @@ int main()
             arr1.Display();
         }
     } while (n != 0);
+    return 0;
 }
