@@ -708,7 +708,6 @@ public:
 
 </details>
 
-![This is the Structure of Queue](paste the link here)
 
 ## Circular Queue
 
