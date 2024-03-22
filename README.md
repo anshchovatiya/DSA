@@ -365,7 +365,7 @@ void sort_array(int arr[], int length)
 
 </details>
 
-## Selection Sort
+### Selection Sort
 
 **_The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from the unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array._**
 
@@ -413,7 +413,7 @@ void SelectionSort(int arr[], int length)
 
 **_Merge sort is defined as a sorting algorithm that works by dividing an array into smaller subarrays, sorting each subarray, and then merging the sorted subarrays back together to form the final sorted array._**
 
-![This is the merge sort working method](paste the link here)
+![This is the merge sort working method](https://github.com/anshchovatiya/DSA/blob/main/Images/Merge_sort.png)
 
 **_Merge Sort Algorithm_**
 
@@ -502,7 +502,92 @@ void merge_sort(int *arr, int start, int end)
 
 **_QuickSort is a sorting algorithm based on the Divide and Conquer algorithm that picks an element as a pivot and partitions the given array around the picked pivot by placing the pivot in its correct position in the sorted array._**
 
-![This is the Quick sort working method](paste the link here)
+![This is the Quick sort working method](https://github.com/anshchovatiya/DSA/blob/main/Images/Quick%20Sort.png)
+
+**_Quick Sort Algorithm_**
+
+<details>
+
+<summary>Quick Sort Implementation</summary>
+
+**_Implementation_**
+
+```cpp
+
+int partition(int *arr, int start, int end)
+{
+
+    // finding random index value for pivot
+    int mid = start + (end - start) / 2;
+    int pivot = arr[mid];
+
+    // swap that index number element to first index
+    swap(arr[mid], arr[start]);
+
+    int count = 0;
+    // counting how many element are smaller than pivot
+    for (int i = start + 1; i <= end; i++)
+    {
+        if (arr[i] < pivot)
+        {
+
+            count++;
+        }
+    }
+
+    // calculating pivot right index
+    int pivotIndex = count + start;
+
+    // transferring pivot to its right place
+    swap(arr[start], arr[pivotIndex]);
+
+    int i = start;
+    int j = end;
+
+    while (i < pivotIndex && j > pivotIndex)
+    {
+        // if element is smaller than pivot i will be incremented
+        while (arr[i] < pivot)
+        {
+            i++;
+        }
+        // if element is greater than pivot j will be decremented
+        while (arr[j] > pivot)
+        {
+            j--;
+        }
+        // i index element and j index element will swap their location
+        if (i < pivotIndex && j > pivotIndex)
+        {
+            swap(arr[i], arr[j]);
+        }
+    }
+
+    // returning pivot Index to divide the array in Quick sort function
+    return pivotIndex;
+}
+
+void Quick_sort(int *arr, int start, int end)
+{
+    // base case
+    if (start >= end)
+    {
+        return;
+    }
+
+    // initializing pivot element and transfer it to it's right place
+    int pivot = partition(arr, start, end);
+
+    // dividing array that is left side of the pivot
+    Quick_sort(arr, start, pivot - 1);
+    // dividing array that is right side of the pivot
+    Quick_sort(arr, pivot + 1, end);
+}
+
+```
+
+</details>
+
 
 ## Simple Queue
 
@@ -742,7 +827,7 @@ public:
 
 _Though the insertion and deletion in a deque can be performed on both ends, it does not follow the FIFO rule. The representation of a deque is given as follows_ -
 
-![representation of Double ended Queue](paste the link here)
+![representation of Double ended Queue](https://github.com/anshchovatiya/DSA/blob/main/Images/Representation%20of%20deque.png)
 
 ### Types of deque
 
@@ -753,13 +838,13 @@ _Though the insertion and deletion in a deque can be performed on both ends, it 
 
 **_In input restricted queue, insertion operation can be performed at only one end, while deletion can be performed from both ends._**
 
-![representation of Input restricted Queue](paste the link here)
+![representation of Input restricted Queue](https://github.com/anshchovatiya/DSA/blob/main/Images/Input%20Restricted%20Double%20ended%20Queue.png)
 
 ### Output restricted Queue
 
 **_In output restricted queue, deletion operation can be performed at only one end, while insertion can be performed from both ends._**
 
-![representation of output restricted Queue](paste the link here)
+![representation of output restricted Queue](https://media.geeksforgeeks.org/wp-content/uploads/20230103222135/outputrestrictedqueue.jpg)
 
 **_Double Queue Algorithm_**
 
