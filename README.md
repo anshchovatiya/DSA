@@ -339,7 +339,7 @@ binarySearch(arr, x, low, high)
 
 <summary>Bubble sort Implementation</summary>
 
-### Implementation
+**_Implementation_**
 
 ```cpp
 
@@ -365,7 +365,7 @@ void sort_array(int arr[], int length)
 
 </details>
 
-### Selection Sort
+## Selection Sort
 
 **_The selection sort algorithm sorts an array by repeatedly finding the minimum element (considering ascending order) from the unsorted part and putting it at the beginning. The algorithm maintains two subarrays in a given array._**
 
@@ -384,7 +384,7 @@ void sort_array(int arr[], int length)
 
 <summary>Selection Implementation</summary>
 
-### Implementation
+**_Implementation_**
 
 ```cpp
 
@@ -408,6 +408,101 @@ void SelectionSort(int arr[], int length)
 ```
 
 </details>
+
+### Merge Sort
+
+**_Merge sort is defined as a sorting algorithm that works by dividing an array into smaller subarrays, sorting each subarray, and then merging the sorted subarrays back together to form the final sorted array._**
+
+![This is the merge sort working method](paste the link here)
+
+**_Merge Sort Algorithm_**
+
+<details>
+
+<summary>Merge Sort Implementation</summary>
+
+**_Implementation_**
+
+```cpp
+
+void merge_array(int *arr, int start, int mid, int end)
+{
+    int arr1_length = mid - start + 1;
+    int arr2_length = end - mid;
+
+    int *arr1 = new int[arr1_length];
+    int *arr2 = new int[arr2_length];
+
+    int i = start;
+    int v = 0;
+    while (v < arr1_length)
+    {
+        arr1[v++] = arr[i++];
+        // cout << arr1[v] << endl;
+    }
+
+    i = mid + 1;
+    int t = 0;
+    while (t < arr2_length)
+    {
+        // cout << arr2[t] << endl;
+        arr2[t++] = arr[i++];
+    }
+
+    i = start;
+    v = 0;
+    t = 0;
+
+    while (v < arr1_length && t < arr2_length)
+    {
+        if (arr1[v] < arr2[t])
+        {
+            arr[i++] = arr1[v++];
+        }
+        else
+        {
+            arr[i++] = arr2[t++];
+        }
+    }
+
+    while (v < arr1_length)
+    {
+        arr[i++] = arr1[v++];
+    }
+    while (t < arr2_length)
+    {
+        arr[i++] = arr2[t++];
+    }
+
+    delete[] arr1;
+    delete[] arr2;
+}
+
+void merge_sort(int *arr, int start, int end)
+{
+    if (start >= end)
+    {
+        return;
+    }
+
+    int mid = start + (end - start) / 2;
+
+    merge_sort(arr, start, mid);
+    merge_sort(arr, mid + 1, end);
+
+    merge_array(arr, start, mid, end);
+}
+
+
+```
+
+</details>
+
+### Quick Sort
+
+**_QuickSort is a sorting algorithm based on the Divide and Conquer algorithm that picks an element as a pivot and partitions the given array around the picked pivot by placing the pivot in its correct position in the sorted array._**
+
+![This is the Quick sort working method](paste the link here)
 
 ## Simple Queue
 
@@ -636,6 +731,177 @@ public:
         }
     }
 };
+
+```
+
+</details>
+
+## Double Ended Queue
+
+**_The deque stands for Double Ended Queue. Deque is a linear data structure where the insertion and deletion operations are performed from both ends. We can say that deque is a generalized version of the queue._**
+
+_Though the insertion and deletion in a deque can be performed on both ends, it does not follow the FIFO rule. The representation of a deque is given as follows_ -
+
+![representation of Double ended Queue](paste the link here)
+
+### Types of deque
+
+    - Input restricted queue
+    - Output restricted queue
+
+### Input restricted Queue
+
+**_In input restricted queue, insertion operation can be performed at only one end, while deletion can be performed from both ends._**
+
+![representation of Input restricted Queue](paste the link here)
+
+### Output restricted Queue
+
+**_In output restricted queue, deletion operation can be performed at only one end, while insertion can be performed from both ends._**
+
+![representation of output restricted Queue](paste the link here)
+
+**_Double Queue Algorithm_**
+
+<details>
+
+<summary>Implementation</summary>
+
+### Double Queue Implementation
+
+```cpp
+
+
+class Queue
+{
+    int *arr;
+    int size;
+    int front;
+    int rear;
+
+   public:
+    Queue(int S)
+    {
+        size = S;
+        front = -1;
+        rear = -1;
+        arr = new int[size];
+    }
+
+    // this function will insert element in queue
+    void Insert_rear(int number)
+    {
+        if (front == -1 && rear == -1)
+        {
+
+            front++;
+            rear++;
+            arr[rear] = number;
+        }
+        else if (rear >= size - 1)
+        {
+            cout << endl
+                 << "Array is Full " << endl
+                 << endl;
+        }
+        else
+        {
+            rear++;
+            arr[rear] = number;
+        }
+    }
+
+
+    // this function will insert front element in queue
+    void Insert_front(int number)
+    {
+        if (front == -1 && rear == -1)
+        {
+
+            front++;
+            rear++;
+            arr[rear] = number;
+        }
+        else if (rear >= size - 1)
+        {
+            cout << endl
+                 << "Array is Full " << endl
+                 << endl;
+        }
+        else
+        {
+              for (int i = rear, v = rear + 1; i >= front; i--, v--)
+            {
+                arr[v] = arr[i];
+            }
+            arr[front] = number;
+            rear++;
+        }
+    }
+
+    // this function will display the array
+    void Display()
+    {
+        if (front >= 0)
+        {
+            cout << endl
+                 << endl;
+            for (int i = front; i <= rear; i++)
+            {
+                cout << arr[i] << " ";
+            }
+            cout << endl
+                 << endl;
+        }
+        else
+        {
+            cout << endl
+                 << "Array is Empty" << endl
+                 << endl;
+        }
+    }
+
+    // this function will delete the first element off the array
+    void Delete_front()
+    {
+        if (front < 0)
+        {
+            cout << endl
+                 << "Array is Empty " << endl
+                 << endl;
+        }
+        else if (front == rear)
+        {
+            front = -1;
+            rear = -1;
+        }
+        else
+        {
+            front++;
+        }
+    }
+
+    // this function will delete the rear element off the array
+    void Delete_rear()
+    {
+        if (rear==-1)
+        {
+            cout << endl
+                 << "Array is Empty " << endl
+                 << endl;
+        }
+        else if (front == rear)
+        {
+            front = -1;
+            rear = -1;
+        }
+        else
+        {
+            rear--;
+        }
+    }
+};
+
 
 ```
 
