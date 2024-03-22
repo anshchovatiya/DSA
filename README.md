@@ -595,7 +595,7 @@ void Quick_sort(int *arr, int start, int end)
 
 **_Queues are the type of container adaptors_**
 
-    - In Queues elements are inserted at the back and inserted from the front
+- In Queues elements are inserted at the back and inserted from the front
 
 ### Functions of Queue
 
@@ -831,8 +831,8 @@ _Though the insertion and deletion in a deque can be performed on both ends, it 
 
 ### Types of deque
 
-    - Input restricted queue
-    - Output restricted queue
+- Input restricted queue
+- Output restricted queue
 
 ### Input restricted Queue
 
