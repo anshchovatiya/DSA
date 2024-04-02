@@ -44,13 +44,24 @@ void print_list()
         printf("list is empty");
     }
 
-    while (ptr != NULL)
+    else
     {
-        printf("%d  ", ptr->data);
-        ptr = ptr->next;
-    }
 
-    printf("\n\n");
+        while (ptr->next!= NULL)
+        {
+            // printf("%d--", ptr->data);
+            ptr = ptr->next;
+        }
+        // printf("%d--", ptr->data);
+        printf("\n");
+        while (ptr->previous != NULL)
+        {
+
+            printf("%d  ", ptr->data);
+            ptr = ptr->previous;
+        }
+        printf("\n\n");
+        }
 }
 
 void Delete_back()
@@ -83,7 +94,9 @@ void Insert_front(int number)
     }
     else
     {
+        Head->previous = temp;
         temp->next = Head;
+
         Head = temp;
     }
 }
@@ -95,20 +108,49 @@ void Delete_front()
     free(temp);
 }
 
-void Insert_middle(int number)
+void Insert_middle(int number, int position)
 {
+    struct Node *temp = (struct Node *)malloc(sizeof(struct Node));
+    temp->data = number;
 
     struct Node *ptr = Head;
-    while (ptr->data != number)
+    while (ptr->data != position)
     {
         ptr = ptr->next;
     }
-    struct Node *temp = (struct Node *)malloc(sizeof(struct Node));
-    temp->data = number;
-    temp->previous=ptr;
-    temp->next=ptr->next;
+    temp->next = ptr->next;
+    ptr->next = temp;
 
-    
+    temp->previous = ptr;
+}
+
+void Delete_middle(int position)
+{
+    struct Node *p = NULL;
+    struct Node *ptr = Head;
+
+    while (ptr->data != position)
+    {
+        p = ptr;
+        ptr = ptr->next;
+    }
+    if (ptr == Head)
+    {
+        Head = Head->next;
+        Head->previous = NULL;
+        free(ptr);
+    }
+    else if (ptr->next == NULL)
+    {
+        p->next = NULL;
+        free(ptr);
+    }
+    else
+    {
+        p->next = ptr->next;
+        ptr->next->previous = p;
+        free(ptr);
+    }
 }
 
 int main()
@@ -120,12 +162,11 @@ int main()
     Insert_front(73);
     Insert_front(98);
     Insert_front(79);
-    print_list();
-
-    Delete_front();
-    Delete_front();
-    Delete_front();
+    Insert_front(79);
 
     print_list();
+
+    // print_list();
+
     return 0;
 }
